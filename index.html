@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TH Studio — Tanmay Halder</title>
+<meta name="description" content="Video editing, websites and AI automations for businesses that want to grow. Based in Kolkata, working globally.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#0c0c0e;color:#d4d4d8;font-family:'Inter',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 44px;border-bottom:1px solid #1c1c1f;position:sticky;top:0;background:#0c0c0eee;backdrop-filter:blur(12px);z-index:100}
+.logo{font-size:17px;font-weight:600;color:#fff;letter-spacing:0.5px;text-decoration:none}
+.logo em{color:#a78bfa;font-style:normal}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{font-size:13px;color:#71717a;text-decoration:none;transition:color 0.2s;letter-spacing:0.2px}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:#a78bfa !important;color:#0c0c0e !important;padding:8px 18px;border-radius:8px;font-weight:500}
+.nav-cta:hover{opacity:0.88;color:#0c0c0e !important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{width:22px;height:1.5px;background:#71717a;display:block;transition:all 0.3s}
+.mobile-menu{display:none;flex-direction:column;gap:0;background:#111113;border-bottom:1px solid #1c1c1f}
+.mobile-menu a{font-size:14px;color:#71717a;text-decoration:none;padding:16px 44px;border-bottom:1px solid #1c1c1f;transition:color 0.2s}
+.mobile-menu a:hover{color:#fff}
+.mobile-menu.open{display:flex}
+
+/* HERO */
+.hero{padding:96px 44px 80px;max-width:760px}
+.hero-eyebrow{display:flex;align-items:center;gap:8px;margin-bottom:24px}
+.eyebrow-dot{width:7px;height:7px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.eyebrow-text{font-size:13px;color:#71717a;letter-spacing:0.3px}
+.hero h1{font-size:48px;font-weight:700;color:#fff;line-height:1.12;margin-bottom:20px;letter-spacing:-0.8px}
+.hero h1 em{font-style:normal;color:#a78bfa}
+.hero-body{font-size:16px;color:#71717a;max-width:480px;line-height:1.75;margin-bottom:36px}
+.hero-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.btn-main{background:#a78bfa;color:#0c0c0e;border:none;padding:13px 26px;border-radius:9px;font-size:14px;font-weight:500;cursor:pointer;transition:opacity 0.2s;letter-spacing:0.2px;text-decoration:none;display:inline-block}
+.btn-main:hover{opacity:0.88}
+.btn-ghost{background:transparent;color:#a1a1aa;border:1px solid #27272a;padding:13px 26px;border-radius:9px;font-size:14px;cursor:pointer;transition:all 0.2s;text-decoration:none;display:inline-block}
+.btn-ghost:hover{border-color:#a78bfa;color:#fff}
+.hero-note{font-size:12px;color:#3f3f46;margin-top:20px}
+
+/* STATS */
+.stats-row{display:flex;padding:36px 44px;gap:48px;flex-wrap:wrap;border-top:1px solid #1c1c1f;border-bottom:1px solid #1c1c1f}
+.stat{display:flex;flex-direction:column;gap:4px}
+.stat-n{font-size:28px;font-weight:700;color:#fff;letter-spacing:-0.5px}
+.stat-l{font-size:12px;color:#52525b;letter-spacing:0.3px}
+
+/* SECTIONS */
+.section{padding:72px 44px;border-bottom:1px solid #1c1c1f}
+.sec-label{font-size:11px;letter-spacing:2px;color:#52525b;text-transform:uppercase;margin-bottom:10px}
+.sec-title{font-size:30px;font-weight:600;color:#fff;margin-bottom:8px;letter-spacing:-0.4px}
+.sec-body{font-size:14px;color:#52525b;margin-bottom:40px;max-width:440px;line-height:1.75}
+
+/* SERVICES */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#1c1c1f;border:1px solid #1c1c1f;border-radius:14px;overflow:hidden}
+.svc{background:#0c0c0e;padding:28px;transition:background 0.2s}
+.svc:hover{background:#111113}
+.svc-icon{width:38px;height:38px;border-radius:9px;background:#18181b;border:1px solid #27272a;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.svc-icon svg{width:17px;height:17px;stroke:#a78bfa;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.svc h3{font-size:15px;font-weight:500;color:#fff;margin-bottom:8px}
+.svc p{font-size:13px;color:#52525b;line-height:1.65;margin-bottom:16px}
+.svc-price{font-size:12px;color:#a78bfa}
+
+/* WORK */
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.work-card{border:1px solid #1c1c1f;border-radius:12px;overflow:hidden;transition:border-color 0.2s;background:#0e0e11;text-decoration:none;display:block}
+.work-card:hover{border-color:#3f3f46}
+.work-thumb{height:130px;background:#111113;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #1c1c1f;position:relative;overflow:hidden}
+.thumb-lines{position:absolute;inset:0;background-repeating-linear-gradient(0deg,transparent,transparent 19px,#1a1a1d 19px,#1a1a1d 20px)}
+.work-chip{position:relative;z-index:1;font-size:10px;letter-spacing:1.5px;color:#a78bfa;text-transform:uppercase;border:1px solid #a78bfa33;padding:5px 12px;border-radius:20px;background:#a78bfa0d}
+.work-info{padding:16px}
+.work-info h4{font-size:13px;font-weight:500;color:#e4e4e7;margin-bottom:4px}
+.work-info p{font-size:12px;color:#52525b;line-height:1.5}
+.work-tags{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.wtag{font-size:10px;color:#3f3f46;background:#18181b;border:1px solid #27272a;padding:2px 8px;border-radius:4px}
+
+/* PROCESS */
+.process-wrap{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #1c1c1f;border-radius:14px;overflow:hidden;background:#1c1c1f;gap:1px}
+.proc{background:#0c0c0e;padding:24px 20px}
+.proc-n{font-size:11px;color:#3f3f46;font-weight:500;letter-spacing:1px;margin-bottom:14px}
+.proc-t{font-size:14px;font-weight:500;color:#e4e4e7;margin-bottom:6px}
+.proc-d{font-size:12px;color:#52525b;line-height:1.6}
+
+/* ABOUT */
+.about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.about-text p{font-size:15px;color:#71717a;line-height:1.8;margin-bottom:16px}
+.about-text p strong{color:#e4e4e7;font-weight:500}
+.about-tags{display:flex;flex-direction:column;gap:10px}
+.about-tag{display:flex;align-items:center;gap:12px;padding:14px 16px;background:#111113;border:1px solid #1c1c1f;border-radius:10px}
+.at-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.at-text{font-size:13px;color:#a1a1aa}
+
+/* CONTACT */
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.contact-card{background:#111113;border:1px solid #1c1c1f;border-radius:12px;padding:24px;transition:border-color 0.2s;cursor:pointer;text-decoration:none;display:block}
+.contact-card:hover{border-color:#a78bfa55}
+.cc-label{font-size:11px;letter-spacing:1.5px;color:#52525b;text-transform:uppercase;margin-bottom:8px}
+.cc-value{font-size:15px;color:#e4e4e7;font-weight:500;margin-bottom:4px}
+.cc-note{font-size:12px;color:#3f3f46}
+.cc-action{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#a78bfa;margin-top:14px}
+.cc-action svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* FOOTER */
+footer{padding:28px 44px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-l{font-size:12px;color:#3f3f46}
+.footer-r{font-size:12px;color:#3f3f46}
+
+/* MOBILE */
+@media(max-width:768px){
+  nav{padding:18px 20px}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .hero{padding:60px 20px 48px}
+  .hero h1{font-size:32px}
+  .hero-body{font-size:15px}
+  .stats-row{padding:28px 20px;gap:28px}
+  .section{padding:52px 20px}
+  .services{grid-template-columns:1fr}
+  .work-grid{grid-template-columns:1fr}
+  .process-wrap{grid-template-columns:1fr 1fr}
+  .about-wrap{grid-template-columns:1fr}
+  .contact-wrap{grid-template-columns:1fr}
+  footer{padding:24px 20px}
+  .mobile-menu a{padding:16px 20px}
+}
+@media(max-width:480px){
+  .process-wrap{grid-template-columns:1fr}
+  .hero h1{font-size:28px}
+  .stat-n{font-size:22px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="#">TH<em>.</em>Studio</a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact" class="nav-cta">Let's talk</a>
+  </div>
+  <div class="hamburger" onclick="toggleMenu()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#work" onclick="closeMenu()">Work</a>
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#contact" onclick="closeMenu()">Let's talk</a>
+</div>
+
+<section class="hero">
+  <div class="hero-eyebrow">
+    <div class="eyebrow-dot"></div>
+    <span class="eyebrow-text">Available for new projects · Kolkata, India</span>
+  </div>
+  <h1>I help businesses grow with <em>video, websites</em> and AI</h1>
+  <p class="hero-body">I'm Tanmay — I build the digital presence small businesses need but don't know how to get. Fast work, honest pricing, real results.</p>
+  <div class="hero-actions">
+    <a href="#contact" class="btn-main">Start a project</a>
+    <a href="#work" class="btn-ghost">See my work</a>
+  </div>
+  <p class="hero-note">Usually reply within a few hours on WhatsApp.</p>
+</section>
+
+<div class="stats-row">
+  <div class="stat"><div class="stat-n">5</div><div class="stat-l">Projects done</div></div>
+  <div class="stat"><div class="stat-n">2 days</div><div class="stat-l">Avg delivery</div></div>
+  <div class="stat"><div class="stat-n">3</div><div class="stat-l">Core services</div></div>
+  <div class="stat"><div class="stat-n">100%</div><div class="stat-l">Client satisfaction</div></div>
+</div>
+
+<section class="section" id="services">
+  <div class="sec-label">What I do</div>
+  <div class="sec-title">Services</div>
+  <div class="sec-body">No agency overhead. No bloated pricing. Just fast, quality work that actually moves your business forward.</div>
+  <div class="services">
+    <div class="svc">
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+      </div>
+      <h3>Video Editing</h3>
+      <p>Reels, YouTube videos, brand promos. Captions, colour grading, motion graphics. Content that actually gets watched.</p>
+      <div class="svc-price">From ₹2,500 / reel · Monthly packs available</div>
+    </div>
+    <div class="svc">
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      </div>
+      <h3>Website Building</h3>
+      <p>Clean, fast, mobile-ready sites. WhatsApp integration, Google Maps, contact forms — everything a local business needs.</p>
+      <div class="svc-price">From ₹4,999 · Live in 2 days</div>
+    </div>
+    <div class="svc">
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      </div>
+      <h3>AI Automations</h3>
+      <p>WhatsApp auto-reply, lead capture, inquiry bots. Your business handles customers 24/7 even when you're offline.</p>
+      <div class="svc-price">From ₹5,000 · Setup + monthly support</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <div class="sec-label">Portfolio</div>
+  <div class="sec-title">Recent work</div>
+  <div class="sec-body">A few things I've built. More coming soon.</div>
+  <div class="work-grid">
+    <div class="work-card">
+      <div class="work-thumb"><div class="thumb-lines"></div><div class="work-chip">Website</div></div>
+      <div class="work-info">
+        <h4>Local business site</h4>
+        <p>Mobile-first site with WhatsApp booking integration</p>
+        <div class="work-tags"><span class="wtag">HTML/CSS</span><span class="wtag">WhatsApp API</span><span class="wtag">Deployed</span></div>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-thumb"><div class="thumb-lines"></div><div class="work-chip">Automation</div></div>
+      <div class="work-info">
+        <h4>Inquiry bot</h4>
+        <p>24/7 WhatsApp auto-reply for a coaching centre in Kolkata</p>
+        <div class="work-tags"><span class="wtag">n8n</span><span class="wtag">WhatsApp</span><span class="wtag">Auto-reply</span></div>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-thumb"><div class="thumb-lines"></div><div class="work-chip">Video</div></div>
+      <div class="work-info">
+        <h4>Brand promo reel</h4>
+        <p>30-sec product video with motion graphics and AI voiceover</p>
+        <div class="work-tags"><span class="wtag">After Effects</span><span class="wtag">Premiere</span><span class="wtag">AI voice</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="sec-label">How it works</div>
+  <div class="sec-title">Simple process</div>
+  <div class="sec-body">No lengthy calls or confusing briefs. Just a quick WhatsApp conversation and I get to work.</div>
+  <div class="process-wrap">
+    <div class="proc"><div class="proc-n">01</div><div class="proc-t">You reach out</div><div class="proc-d">WhatsApp or call. Tell me what you need in plain language.</div></div>
+    <div class="proc"><div class="proc-n">02</div><div class="proc-t">I send a plan</div><div class="proc-d">Clear scope, timeline, and price. No surprises.</div></div>
+    <div class="proc"><div class="proc-n">03</div><div class="proc-t">I build it</div><div class="proc-d">You get updates. I deliver fast — usually 1–2 days.</div></div>
+    <div class="proc"><div class="proc-n">04</div><div class="proc-t">You approve</div><div class="proc-d">Revisions until you're happy. Then it goes live.</div></div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="sec-label">About</div>
+  <div class="sec-title">Who I am</div>
+  <div class="about-wrap">
+    <div class="about-text">
+      <p>I'm <strong>Tanmay Halder</strong>, a 16-year-old from Kolkata building things with AI that used to take teams weeks to do.</p>
+      <p>I started editing videos, then figured out that businesses needed more than just content — they needed a full digital presence. So I learned websites and automations too.</p>
+      <p>I work fast, I'm easy to talk to, and I actually care whether your business grows or not.</p>
+    </div>
+    <div class="about-tags">
+      <div class="about-tag"><div class="at-dot" style="background:#a78bfa"></div><span class="at-text">Based in Kolkata, working globally</span></div>
+      <div class="about-tag"><div class="at-dot" style="background:#22c55e"></div><span class="at-text">Available for new projects right now</span></div>
+      <div class="about-tag"><div class="at-dot" style="background:#f59e0b"></div><span class="at-text">Fluent in English + Bengali</span></div>
+      <div class="about-tag"><div class="at-dot" style="background:#3b82f6"></div><span class="at-text">After Effects · Premiere · Claude AI · n8n</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="sec-label">Contact</div>
+  <div class="sec-title">Let's build something</div>
+  <div class="sec-body">Got a project in mind? Reach out on WhatsApp — it's the fastest way to get things moving.</div>
+  <div class="contact-wrap">
+    <a class="contact-card" href="https://wa.me/919163731997" target="_blank" rel="noopener">
+      <div class="cc-label">WhatsApp</div>
+      <div class="cc-value">+91 91637 31997</div>
+      <div class="cc-note">Fastest response · Usually within 2 hours</div>
+      <div class="cc-action">Open WhatsApp <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+    </a>
+    <a class="contact-card" href="tel:+918017845508">
+      <div class="cc-label">Phone / Call</div>
+      <div class="cc-value">+91 80178 45508</div>
+      <div class="cc-note">For calls · Mon–Sat, 10am–8pm IST</div>
+      <div class="cc-action">Call now <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-l">© 2025 TH Studio · Tanmay Halder · Kolkata, India</div>
+  <div class="footer-r">Built with AI · Delivered fast</div>
+</footer>
+
+<script>
+function toggleMenu(){
+  const m=document.getElementById('mobileMenu');
+  m.classList.toggle('open');
+}
+function closeMenu(){
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',function(e){
+    const t=document.querySelector(this.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}
+  });
+});
+</script>
+</body>
+</html>
